@@ -29,15 +29,17 @@ store.emit(eventName, (store) => {
 ```js
 const store = Kel({ count: 0 });
 
-store.on("countChange", ({ count }) => {
+const COUNT_CHANGE = "countChange";
+
+store.on(COUNT_CHANGE, ({ count }) => {
   document.querySelectorAll("span.counter-value")[0].textContent = count;
 });
 
 document.getElementById("inc").addEventListener("click", function () {
-  store.emit("countChange", ({ count }) => ({ count: count + 1 }));
+  store.emit(COUNT_CHANGE, ({ count }) => ({ count: count + 1 }));
 });
 
 document.getElementById("dec").addEventListener("click", function () {
-  store.emit("countChange", ({ count }) => ({ count: count - 1 }));
+  store.emit(COUNT_CHANGE, ({ count }) => ({ count: count - 1 }));
 });
 ```
