@@ -1,5 +1,8 @@
 # Kel
+
 A dead simple, event driven state management library for Vanilla JS apps.
+
+[Form demo](https://kel.vijitail.dev/form/)
 
 ## Initialize the global store
 
