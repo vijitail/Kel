@@ -53,11 +53,11 @@ const Kel = (function () {
 
     store = { ...store, ...payload };
 
-    events[eventName].forEach(({ keys, cb }) => {
-      if (keys.length == 0) cb(deepFreeze(store));
+    events[eventName].forEach(({ dep, cb }) => {
+      if (dep.length == 0) cb(deepFreeze(store));
       else {
         const t = {};
-        keys.forEach((k) => {
+        dep.forEach((k) => {
           if (store.hasOwnProperty(k)) t[k] = store[k];
         });
 

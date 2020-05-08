@@ -1,4 +1,4 @@
-const Kel = (function (window) {
+const Kel = (function () {
   function once(fn, context) {
     var result;
 
