@@ -1,4 +1,4 @@
-(function (window) {
+const Kel = (function () {
   function once(fn, context) {
     var result;
 
@@ -15,14 +15,14 @@
   function deepFreeze(o) {
     Object.freeze(o);
 
-    Object.getOwnPropertyNames(o).forEach(function (prop) {
+    Object.keys(o).forEach(function (key) {
       if (
-        o.hasOwnProperty(prop) &&
-        o[prop] !== null &&
-        (typeof o[prop] === "object" || typeof o[prop] === "function") &&
-        !Object.isFrozen(o[prop])
+        o.hasOwnProperty(key) &&
+        o[key] !== null &&
+        (typeof o[key] === "object" || typeof o[key] === "function") &&
+        !Object.isFrozen(o[key])
       ) {
-        deepFreeze(o[prop]);
+        deepFreeze(o[key]);
       }
     });
 
@@ -80,5 +80,5 @@
     return true;
   };
 
-  window.Kel = once(Kel);
-})(window);
+  return once(Kel);
+})();

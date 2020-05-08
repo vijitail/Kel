@@ -1,4 +1,4 @@
-(function (window) {
+const Kel = (function (window) {
   function once(fn, context) {
     var result;
 
@@ -80,5 +80,5 @@
     return true;
   };
 
-  window.Kel = once(Kel);
-})(window);
+  return once(Kel);
+})();
