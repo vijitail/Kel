@@ -1,6 +1,6 @@
 const Kel = (function () {
   function once(fn, context) {
-    var result;
+    let result;
 
     return function () {
       if (fn) {
