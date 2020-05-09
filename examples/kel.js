@@ -73,6 +73,12 @@ const Kel = (function () {
       console.error("on() method expects 2nd argument as a callback function");
       return false;
     }
+
+    if (Object.prototype.toString.call(dep) !== "[object Array]") {
+      console.error("on() method expects 3nd argument as an array");
+      return false;
+    }
+
     if (!events.hasOwnProperty(eventName)) events[eventName] = [];
 
     events[eventName].push({ dep, cb });
