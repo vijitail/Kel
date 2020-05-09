@@ -15,7 +15,7 @@ const Kel = (function () {
   function deepFreeze(o) {
     Object.freeze(o);
 
-    Object.keys(o).forEach(function (key) {
+    Object.keys(o).forEach((key) => {
       if (
         o.hasOwnProperty(key) &&
         o[key] !== null &&
