@@ -1,5 +1,5 @@
 {
-    "name": "simple-store",
+    "name": "ts-kel",
     "version": "1.0.0",
     "description": "A Kel.js Typescript implementation",
     "main": "lib/index.js",
