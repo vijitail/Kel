@@ -1,4 +1,4 @@
-import { Kel } from '..';
+import Kel from '..';
 
 interface Example {
     foo: string;
